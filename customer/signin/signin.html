@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-section"></div>
+        <div class="form-section">
+            <h6>เข้าสู่ระบบ</h6>
+            <form id="loginForm">
+                <label for="email">อีเมล</label>
+                <input type="email" id="email" name="email" placeholder="กรุณากรอกอีเมล" oninput="resetBorder(this)">
+
+                <label for="password">รหัสผ่าน</label>
+                <input type="password" id="password" name="password" placeholder="กรุณากรอกรหัสผ่าน" oninput="resetBorder(this)">
+
+                <button type="submit">เข้าสู่ระบบ</button>
+                <div class="auth-links">
+                    <a href="#" class="forgot-password">ลืมรหัสผ่าน?</a>
+                    <a href="../signup/signup.html" class="signup">สมัครสมาชิก</a>
+                </div>
+            </form>
+            <hr>
+            <div>หรือ</div>
+            <div class="social-buttons">
+                <button class="facebook"><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;Facebook</button>
+                <button class="line"><i class="fab fa-line"></i>&nbsp;&nbsp;&nbsp; Line</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // ป้องกันการส่งฟอร์มไปก่อนตรวจสอบ
+
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+
+            let isValid = true;
+
+            if (email.value.trim() === "") {
+                email.style.borderColor = "red";
+                email.setCustomValidity("⚠ กรุณากรอกอีเมล");
+                email.reportValidity();
+                isValid = false;
+            } else {
+                email.setCustomValidity(""); // ล้างข้อความแจ้งเตือน
+            }
+
+            if (password.value.trim() === "") {
+                password.style.borderColor = "red";
+                password.setCustomValidity("⚠ กรุณากรอกรหัสผ่าน");
+                password.reportValidity();
+                isValid = false;
+            } else {
+                password.setCustomValidity(""); // ล้างข้อความแจ้งเตือน
+            }
+
+            if (isValid) {
+                window.location.href = '../main/main.html';
+            }
+        });
+
+        function resetBorder(input) {
+            input.style.borderColor = "#ccc"; // เปลี่ยนสีขอบกลับเป็นปกติ
+            input.setCustomValidity(""); // ล้างข้อความแจ้งเตือน
+        }
+    </script>
+</body>
+
+</html>

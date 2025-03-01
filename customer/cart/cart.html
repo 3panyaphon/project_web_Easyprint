@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Easyprint</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- 🔹 Navbar -->
+    <nav class="navbar">
+        <!-- 🔹 โลโก้ -->
+        <div class="logo">
+            <span style="font: size 100px;"><i class="fa-solid fa-print"></i>&nbsp;&nbsp;Easyprint</span>
+        </div>
+
+        <!-- 🔹 ตำแหน่งปัจจุบัน -->
+        <div class="location-box">
+
+            <span><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ตำแหน่งปัจจุบัน</span>
+
+        </div>
+
+        <!-- 🔹 ช่องค้นหา -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ค้นหาร้านถ่ายเอกสาร">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- 🔹 ไอคอนตะกร้า & Login -->
+        <div class="icons">
+            <ul>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="../signin/signin.html"><i class="fa-regular fa-circle-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 🔹 เมนูด้านล่าง -->
+    <div class="menu">
+        <a href="../main/main.html">หน้าหลัก</a>
+        <a href="../howtoprint/howtoprint.html">วิธีสั่งพิมพ์เอกสาร</a>
+        <a href="../order/order1.html">ติดตามสถานะงาน</a>
+        <a href="../question/question.html">คำถามที่พบบ่อย</a>
+    </div>
+    <div class="container">
+        <h2><span class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></span> รายการคำสั่งซื้อทั้งหมด</h2>
+
+        <hr class="divider"><br>
+        <input type="text" class="input-box" value="ไฟล์1. A3" readonly>
+        <input type="text" class="input-box" value="งานวิจัย. A4" readonly>
+        <input type="text" class="input-box" value="สรุปแคลคูลัส. A4" readonly>
+
+        <h4>รวมยอดทั้งหมด : <span class="total-box">127</span> บาท</h4>
+        <hr class="divider">
+        <h4 class="section-title">วิธีชำระเงิน</h4>
+
+        <!-- ตารางเลือกวิธีชำระเงิน -->
+        <table class="payment-box">
+            <tr>
+                <td><label><input type="radio" name="payment" value="store" onclick="toggleQR(false)">
+                        ชำระที่ร้าน</label></td>
+            </tr>
+            <tr>
+                <td><label><input type="radio" name="payment" value="qr" onclick="toggleQR(true)"> QR Code</label></td>
+            </tr>
+        </table>
+
+        <!-- QR Code + อัปโหลดหลักฐาน -->
+        <div class="qr-section" id="qrSection" style="display: none;">
+            <img src="https://www.scb.co.th/getmedia/2f609c0d-4ec2-4682-a194-137f66371bad/qr-code-generated-7.jpg"
+                alt="QR Code" width="200">
+            <p>PromptPay: XXX-XXX-1234</p>
+            <input type="file" accept=".png, .jpg, .jpeg" class="input-box">
+        </div>
+
+        <div class="button-box">
+            <a href="../main/main.html"><button class="btn-back">ย้อนกลับ</button></a>
+            <button class="btn-confirm">ยืนยัน</button>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

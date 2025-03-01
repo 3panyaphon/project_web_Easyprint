@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Easyprint Status-1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- 🔹 Navbar -->
+    <nav class="navbar">
+        <!-- 🔹 โลโก้ -->
+        <div class="logo">
+            <span style="font: size 100px;"><i class="fa-solid fa-print"></i>&nbsp;&nbsp;Easyprint</span>
+        </div>
+
+        <!-- 🔹 ตำแหน่งปัจจุบัน -->
+        <div class="location-box">
+
+            <span><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ตำแหน่งปัจจุบัน</span>
+
+        </div>
+
+        <!-- 🔹 ช่องค้นหา -->
+        <div class="search-box">
+            <input type="text" placeholder="ค้นหาร้านถ่ายเอกสาร">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- 🔹 ไอคอนตะกร้า & Login -->
+        <div class="icons">
+            <ul>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-circle-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 🔹 เมนูด้านล่าง -->
+    <div class="menu">
+        <a href="/ลูกค้า/">หน้าหลัก</a>
+        <a href="/ลูกค้า/howtoprint/howtoprint.html">วิธีสั่งพิมพ์เอกสาร</a>
+        <a href="/ลูกค้า/order/order1.html">ติดตามสถานะงาน</a>
+        <a href="/ลูกค้า/questiom/questiom.html">คำถามที่พบบ่อย</a>
+    </div>
+    <div class="status-container">
+        <div class="status-header">สถานะงาน</div>
+        <div class="progress">
+            <div class="progress-step active">
+                <div class="icon">📄</div>
+                <span>รับงานแล้ว</span>
+            </div>
+            <div class="progress-line active"></div>
+            <div class="progress-step active">
+                <div class="icon">🖨️</div>
+                <span>กำลังดำเนินการ</span>
+            </div>
+            <div class="progress-line active"></div>
+            <div class="progress-step active">
+                <div class="icon">📋</div>
+                <span>ตรวจสอบคุณภาพ</span>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="icon">✅</div>
+                <span>เสร็จสิ้น</span>
+            </div>
+        </div>
+        <div class="status-note">อีก 15 นาทีเสร็จ (โดยประมาณ)</div>
+    </div>
+    </div>
+    <!-- ปุ่มเปิดแชท -->
+    <div id="popup" onclick="showpopup()"><i class="fa-solid fa-comments"></i> ช่องสนทนา</div>
+
+    <!-- กล่องแชท -->
+    <div class="popup-chat" id="popup-chat">
+        <div class="chat-header">📩 แชทกับร้าน</div>
+        <div class="chat-content" id="chat-content">
+            <div class="message other">สวัสดีค่ะ! มีอะไรให้ช่วยเหลือหรือไม่</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-message" placeholder="พิมพ์ข้อความ...">
+            <button onclick="sendMessage()">ส่ง</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    function showpopup() {
+        let popup = document.getElementById('popup-chat');
+        if (popup.style.display === 'none' || popup.style.display === '') {
+            popup.style.display = 'block';
+        } else {
+            popup.style.display = 'none';
+        }
+    }
+    function sendMessage() {
+        let input = document.getElementById('chat-message');
+        let chatContent = document.getElementById('chat-content');
+
+        if (input.value.trim() !== "") {
+            let newMessage = document.createElement('div');
+            newMessage.classList.add('message', 'user');
+            newMessage.textContent = input.value;
+            chatContent.appendChild(newMessage);
+            input.value = '';
+            chatContent.scrollTop = chatContent.scrollHeight;
+        }
+    }
+</script>
+
+
+</html>

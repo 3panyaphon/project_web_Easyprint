@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2Bears Service ร้านปริ้น - ถ่ายเอกสารพะเยา</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- 🔹 Navbar -->
+  <nav class="navbar">
+    <!-- 🔹 โลโก้ -->
+    <div class="logo">
+      <span style="font: size 100px;"><i class="fa-solid fa-print"></i>&nbsp;&nbsp;Easyprint</span>
+    </div>
+
+    <!-- 🔹 ตำแหน่งปัจจุบัน -->
+    <div class="location-box">
+
+      <span><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ตำแหน่งปัจจุบัน</span>
+
+    </div>
+
+    <!-- 🔹 ช่องค้นหา -->
+    <div class="search-box">
+      <input type="text" placeholder="ค้นหาร้านถ่ายเอกสาร">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- 🔹 ไอคอนตะกร้า & Login -->
+    <div class="icons">
+      <ul>
+        <div class="cart"><li><a href="../cart/cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li></div>
+        <span class="cart-count" style="display: none;"><i class="fa-shopping-cart"></i></span>
+        <li><a href="../signin/signin.html"><i class="fa-regular fa-circle-user"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 🔹 เมนูด้านล่าง -->
+  <div class="menu">
+    <a href="../main/main.html">หน้าหลัก</a>
+    <a href="../howtoprint/howtoprint.html">วิธีสั่งพิมพ์เอกสาร</a>
+    <a href="../order/order1.html">ติดตามสถานะงาน</a>
+    <a href="../question/question.html">คำถามที่พบบ่อย</a>
+  </div>
+  <div class="form-container">
+    <div class="shop-info">
+      <img src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/474193630_122188325156086593_1630121166019807293_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=4TVUNbIwt4kQ7kNvgHpS8IS&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=AXf_q6Tbe-i-dbnkFBS3p_K&oh=00_AYDVXZvB61IABFAsE00VyWPQiGGd1An9zyR28kJaT9ybLw&oe=67C75C88" alt="Shop Image">
+      <div>
+        <p style="margin-bottom: 10px;"><strong>ชื่อร้าน:</strong>2Bears Service ร้านปริ้น - ถ่ายเอกสารพะเยา</p>
+        <p style="margin-bottom: 10px;"><strong>ที่อยู่ร้าน:</strong> AH2 ตำบลแม่กา อำเภอเมืองพะเยา พะเยา 56000</p>
+        <p style="margin-bottom: 10px;"><strong>ระยะทาง:</strong> 4.8 KM</p>
+      </div>
+    </div>
+    <hr>
+    <div class="upload-area">
+      <form id=dataFrom>
+        <p>อัปโหลดเอกสารที่นี่</p>
+        <p>Click to choose the files or drag them here</p>
+        <input type="file" id="fileInput" name="file" accept="application/pdf, image/*, .doc, .docx" onchange="updateFileName()" multiple />
+        <div id="fileNameDisplay" style="margin-top: 10px; font-size: 14px; color: #666;"></div>
+    </div>
+    <div class="form-group">
+      <label for="document-detail">รายละเอียดเอกสาร</label>
+      <select id="document-detail">
+        <option>ถ่ายหน้าเดียว</option>
+        <option>ถ่ายเอกสารสองหน้า</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="document-type">ประเภทเอกสาร</label>
+      <select id="document-type">
+        <option>ขาวดำ</option>
+        <option>สี</option>
+        <option>พิมพ์โปสเตอร์</option>
+        <option>นามบัตร</option>
+        <option>ภาพถ่าย/พิมพ์รูปภาพ</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="size">ขนาด</label>
+      <select id="size">
+        <option>A4 80 แกรม</option>
+        <option>A4 100 แกรม</option>
+        <option>กกระดาษหน้าปกรายงาน(ปกแข็ง)</option>
+        <option>กระดาษโฟโต้</option>
+        <option>A3</option>
+        <option>A5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="quantity">จำนวน (ชุด)</label>
+      <input type="text" id="quantity" placeholder="ใส่จำนวนเอกสารที่ต้องการ">
+    </div>
+    <div class="form-group">
+      <label for="additional-options">ตัวเลือกเพิ่มเติม</label>
+      <select id="additional-options">
+        <option>ไม่ต้องการอะไรเพิ่มเติม</option>
+        <option>เข้าเล่มแบบเย็บแม็ก</option>
+        <option>ลวดเสียบกระดาษ</option>
+        <option>สันปกแบบรูด</option>
+        <option>เข้าเล่มแบบสันเกลียว</option>
+        <option>เข้าเล่มแบบสันกาว</option>
+        <option>เข้าเล่มแบบสันห่วง</option>
+        <option>พลาสติดใส</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="price">ราคา</label>
+      <input type="text" id="price" placeholder="XXX บาท" disabled>
+    </div>
+    <div class="button-group">
+      <a href="../main/main.html">
+        <button type="button" class="cancel-btn">ยกเลิก</button>
+      </a>
+      <button type="submit" class="submit-btn">เพิ่มลงตะกร้า</button>
+    </div>
+    </form>
+  </div>
+</body>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('dataFrom');
+  const fileInput = document.getElementById('fileInput');
+  const cartButton = document.querySelector('.cart');
+  const priceInput = document.getElementById('price');
+  const quantityInput = document.getElementById('quantity');
+  const documentTypeSelect = document.getElementById('document-type');
+  const sizeSelect = document.getElementById('size');
+  const additionalOptionsSelect = document.getElementById('additional-options');
+  const fileNameDisplay = document.getElementById('fileNameDisplay');
+  const uploadArea = document.querySelector('.upload-area');
+  
+  let cartCount = 0;
+
+  // ตรวจสอบว่าผู้ใช้กรอกข้อมูลครบหรือไม่
+  function validateForm() {
+    const isFileUploaded = fileInput.files.length > 0;
+    const quantityValue = quantityInput.value.trim();
+    const isQuantityValid = quantityValue && parseInt(quantityValue) >= 1;
+    
+    if (!isFileUploaded && !isQuantityValid) {
+      alert('⚠ กรุณาอัปโหลดไฟล์และกรอกจำนวนชุด');
+      return false;
+    }
+    if (!isFileUploaded) {
+      alert('⚠ กรุณาอัปโหลดไฟล์');
+      return false;
+    }
+    if (!isQuantityValid) {
+      alert('⚠ กรุณากรอกจำนวนชุดที่ต้องการ');
+      return false;
+    }
+    return true;
+  }
+
+  // ฟังก์ชันอัปเดตตะกร้า
+  function updateCartCount() {
+    let badge = cartButton.querySelector('.cart-count');
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.classList.add('cart-count');
+      cartButton.appendChild(badge);
+    }
+    cartCount++;
+    badge.textContent = cartCount;
+    alert(`🛒 สินค้าถูกเพิ่มลงในตะกร้าแล้ว!`);
+  }
+
+  // รีเซ็ตฟอร์มกลับค่าเริ่มต้น
+  function resetForm() {
+    form.reset();  // รีเซ็ตค่าทั้งหมดในฟอร์ม
+    fileNameDisplay.textContent = '⚠ ไม่มีไฟล์ที่เลือก'; // รีเซ็ตชื่อไฟล์ที่เลือก
+    priceInput.value = 'XXX บาท'; // รีเซ็ตช่องแสดงราคากลับเป็นค่าเริ่มต้น
+  }
+
+  // คำนวณราคา
+  function calculatePrice() {
+    const quantity = parseInt(quantityInput.value) || 1;
+    let basePrice = 0;
+
+    switch (documentTypeSelect.value) {
+      case 'ขาวดำ': basePrice = 5; break;
+      case 'สี': basePrice = 10; break;
+      case 'พิมพ์โปสเตอร์': basePrice = 30; break;
+      case 'นามบัตร': basePrice = 20; break;
+      case 'ภาพถ่าย/พิมพ์รูปภาพ': basePrice = 15; break;
+    }
+
+    if (sizeSelect.value === 'A3') {
+      basePrice += 10;
+    } else if (sizeSelect.value === 'A5') {
+      basePrice += 5;
+    }
+
+    let additionalCost = (additionalOptionsSelect.value !== 'ไม่ต้องการอะไรเพิ่มเติม') ? 5 : 0;
+    const totalPrice = (basePrice + additionalCost) * quantity;
+    priceInput.value = `${totalPrice} บาท`;
+  }
+
+  // แสดงชื่อไฟล์เมื่ออัปโหลดแล้ว
+  function updateFileName() {
+    if (fileInput.files.length > 0) {
+      const fileNames = Array.from(fileInput.files).map(file => file.name).join(', ');
+      fileNameDisplay.textContent = `📄 ไฟล์ที่เลือก: ${fileNames}`;
+    } else {
+      fileNameDisplay.textContent = '⚠ ไม่มีไฟล์ที่เลือก';
+    }
+  }
+
+  // ป้องกันผู้ใช้ใส่ตัวเลขน้อยกว่า 1
+  quantityInput.addEventListener('input', () => {
+    if (quantityInput.value === '' || parseInt(quantityInput.value) < 1) {
+      quantityInput.value = '1'; // ตั้งค่าเป็น 1 อัตโนมัติ
+    }
+  });
+
+  // เมื่อกดส่งฟอร์ม
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+      updateCartCount();
+      resetForm(); // รีเซ็ตฟอร์มหลังจากเพิ่มลงตะกร้า
+    }
+  });
+
+  // ให้คลิกพื้นที่อัปโหลดแล้วเปิดตัวเลือกไฟล์
+  if (uploadArea) {
+    uploadArea.addEventListener('click', () => fileInput.click());
+  }
+
+  // อัปเดตชื่อไฟล์เมื่อมีการเลือกไฟล์
+  fileInput.addEventListener('change', updateFileName);
+
+  // คำนวณราคาทุกครั้งที่เปลี่ยนค่าฟอร์ม
+  form.addEventListener('change', calculatePrice);
+  quantityInput.addEventListener('input', calculatePrice);
+
+  // คำนวณราคาตั้งแต่โหลดหน้าเว็บ
+  calculatePrice();
+});
+
+  </script>
+
+</html>

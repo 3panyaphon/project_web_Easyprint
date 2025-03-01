@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+ 
+    <style>
+        /* ส่วนแทบบาร์ */
+    * {
+        padding: 0;  
+    }
+ 
+        body {
+            background: #f8f9fa;
+            font-family: 'Sarabun', sans-serif;
+            color: #333;
+            height: 100vh;
+            margin: 0;
+        }
+ 
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 10px 30px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed; /* ทำให้ Navbar ค้างที่ด้านบน */
+            top: 0;
+            left: 0;
+            width: 100%; /* ให้กว้างเต็มหน้าจอ */
+            z-index: 1000; /* ให้ Navbar อยู่ด้านบนสุด */
+        }
+ 
+        /* โลโก้ */
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+        }
+ 
+        /* แทบบาร์ด้านบน ส่วนชื่อร้าน */
+        .shop-name {
+        border: 1px solid #333;
+        padding: 8px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        margin-left: 30px;
+        }
+       
+        /* ไอคอนแจ้งเตือน และ ตั้งค่า */
+        .icons {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+        }
+ 
+        .icons ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .icons ul li a {
+            text-decoration: none;
+            font-size: 25px;
+            color:#333;
+        }
+ 
+ 
+        /* ส่วนเมนูแทบข้าง */
+        .sidebar {
+        width: 200px;
+        background: #f8f9fa;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding-top: 60px; /* ขยับลงให้ไม่ทับ navbar */
+        border-right: 2px solid #ddd;
+        overflow: hidden;
+    }
+ 
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: #333;
+            text-decoration: none;
+            overflow: hidden;
+        }
+        .sidebar a.active, .sidebar a:hover {
+            background: #007bff;
+            color: white;
+        }
+        /* ส่วนเนื้อหา */
+        .content {
+            flex: 1;
+            padding: 20px;
+            padding-top: 80px; /* เพิ่ม padding-top เพื่อเลี่ยง navbar */
+            margin-left: 220px; /* เพิ่ม margin-left เพื่อเลี่ยง sidebar */
+        }
+
+        .content h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 35%;
+            font-size: 14px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color:brown;
+            margin-top: 5px;
+            border-left: 5px solid brown;
+            padding-left: 10px;
+            text-align: start;
+            margin-bottom: 20px;
+        }
+
+
+        .upload-area {
+            font-size: 15px;
+            width: 96%;
+            text-align: left;
+            background-color: rgb(243, 249, 254);
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            background-color: rgb(243, 249, 254);
+            width: 99%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        th,
+        td {
+            font-size: small;
+            font-family: Tahoma, Arial, sans-serif;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        td {
+            background-color: #f9f9f9;
+            height: 40px;
+        }
+    </style>
+ </head>
+ <body>
+     <!-- Navbar -->
+     <nav class="navbar">
+ 
+        <!-- โลโก้ -->
+        <div class="logo">
+            <span style="font: size 100px;"><i class="fa-solid fa-print"></i>&nbsp;&nbsp;Easyprint</span>
+   
+            <div class="shop-name">            
+                <span> ร้าน ซี.พี.ร็อกซ์ 4</span>      
+            </div>
+        </div>
+   
+        <!-- ไอคอนแจ้งเตือน & ตั้งค่า -->
+        <div class="icons">
+            <ul>
+            <li><a href="#"><i class="fa fa-bell"></i></a></li>
+            <li><a href="#"><i class="fa fa-cog"></i></a></li>
+            </ul>
+        </div>
+   
+        </nav>
+   
+        <!-- เมนูด้านข้าง -->
+        <div class="sidebar">
+            <a href="main_partner.html" class="active"><i class="fa fa-home"></i> หน้าแรก</a>
+            <a href="set_service_partners.html"> กำหนดค่าบริการ</a>
+            <a href="set_pay_partners.html"> ชำระเงินออนไลน์</a>
+            <a href="promotion-partners.html"> โปรโมชั่น</a>
+            <a href="delivery_partners.html"> บริการจัดส่ง</a>
+            <a href="statistics_day_partners.html"> รายการคำสั่งซื้อ</a>
+            <a href="statistic_partners.html"> สถิติการขาย</a>
+            <a href="Edit_profile_partners.html"> แก้ไขโปรไฟล์</a>
+        </div>
+    
+
+        <!-- เนื้อหา -->
+<div class="content">
+    <h2>สถิติการขาย | สรุปรายได้</h2>
+    <hr>
+
+    <!-- รายได้รวม -->
+    <div class="form-group">
+        <label for="date">เลือกช่วงเวลาที่ต้องการดูรายได้</label>
+        <input type="date" id="date" style="width: min-content;">
+    </div>
+
+    <div>
+        <h3>ภาพรวมรายได้</h3>
+        <table style="border-collapse: collapse; text-align: center; width: 100%;">
+            <tr>
+                <th>รายได้วันนี้</th>
+                <th>รายได้เดือนนี้</th>
+                <th>รายได้ปีนี้</th>
+                <th>กำไรหลังหักต้นทุน</th>
+            </tr>
+            <tr>
+                <td>2,500 บาท</td>
+                <td>55,000 บาท</td>
+                <td>630,000 บาท</td>
+                <td>430,000 บาท</td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+
+    <!-- กราฟแสดงข้อมูล -->
+    <div>
+        <h3>กราฟแสดงยอดขาย</h3>
+        <canvas id="salesChart" width="400" height="200"></canvas>
+    </div>
+
+    <br>
+
+    <!-- รายได้แยกตามประเภทบริการ -->
+    <div>
+        <label for="additional-options">รายได้แยกตามประเภทบริการ</label>
+        <select id="additional-options">
+            <option value="all">ทั้งหมด</option>
+            <option value="print">บริการปริ้นเอกสาร</option>
+            <option value="copy">บริการถ่ายเอกสาร</option>
+            <option value="binding">บริการเข้าเล่ม</option>
+            <option value="laminate">บริการเคลือบบัตร</option>
+        </select>
+    </div>
+
+    <br>
+
+    <!-- รายการขายยอดนิยม -->
+    <div>
+        <h3>รายการขายยอดนิยม</h3>
+        <div class="upload-area" style="border: none;">
+            <p><b>ประเภทบริการ:</b> ปริ้นสี A4</p>
+            <p><b>จำนวนครั้งที่ถูกใช้งาน:</b> 320 ครั้ง</p>
+            <p><b>รายได้จากบริการนี้:</b> 85,000 บาท</p>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- รายได้จากโปรโมชั่น -->
+    <div>
+        <h3>รายได้จากโปรโมชั่น</h3>
+        <div class="upload-area" style="border: none;">
+            <p><b>รายได้จากการใช้โปรโมชั่น:</b> 15,000 บาท</p>
+            <p><b>ส่วนลดที่ใช้ทั้งหมด:</b> 5,000 บาท</p>
+        </div>
+    </div>
+</div>
+
+<!-- ใส่ Chart.js เพื่อทำให้กราฟใช้งานได้ -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // ข้อมูลสำหรับกราฟ
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    const salesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['ปริ้นเอกสาร', 'ถ่ายเอกสาร', 'เข้าเล่ม', 'เคลือบบัตร'],
+            datasets: [{
+                label: 'รายได้ (บาท)',
+                data: [85000, 45000, 15000, 12000],
+                backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545']
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+
+ </body>
+ </html>

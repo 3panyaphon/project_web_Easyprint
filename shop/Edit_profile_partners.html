@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+ 
+    <style>
+        /* ส่วนแทบบาร์ */
+    * {
+        padding: 0;  
+    }
+ 
+        body {
+            background: white;
+            font-family: 'Sarabun', sans-serif;
+            color: #333;
+            height: 100vh;
+            margin: 0;
+        }
+ 
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 10px 30px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed; /* ทำให้ Navbar ค้างที่ด้านบน */
+            top: 0;
+            left: 0;
+            width: 100%; /* ให้กว้างเต็มหน้าจอ */
+            z-index: 1000; /* ให้ Navbar อยู่ด้านบนสุด */
+        }
+ 
+        /* โลโก้ */
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+        }
+ 
+        /* แทบบาร์ด้านบน ส่วนชื่อร้าน */
+        .shop-name {
+        border: 1px solid #333;
+        padding: 8px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        margin-left: 30px;
+        }
+       
+        /* ไอคอนแจ้งเตือน และ ตั้งค่า */
+        .icons {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+        }
+ 
+        .icons ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .icons ul li a {
+            text-decoration: none;
+            font-size: 25px;
+            color:#333;
+        }
+ 
+ 
+        /* ส่วนเมนูแทบข้าง */
+        .sidebar {
+        width: 200px;
+        background: #f8f9fa;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding-top: 60px; /* ขยับลงให้ไม่ทับ navbar */
+        border-right: 2px solid #ddd;
+        overflow: hidden;
+    }
+ 
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: #333;
+            text-decoration: none;
+            overflow: hidden;
+        }
+        .sidebar a.active, .sidebar a:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        /* เนื้อหา */
+        .form-container {        
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 10px;
+            margin-top: 150x;
+        }
+
+        .form-container h1 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            margin-left: 100px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+            padding: 5px 0;
+            font-size: 14px;
+            background: none;
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group textarea:focus {
+            border-bottom: 1px solid #007bff;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #2baf2b;
+        }
+
+        .profile-container {
+                position: absolute;
+                top: 80px; 
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        }
+
+            .profile-icon {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background: #ddd;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 50px;
+                color: #555;
+            }
+
+
+        /* ไอคอนกล้อง */
+        .edit-icon {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #007bff;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* ซ่อน input file */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* ลิงก์อัปโหลด */
+        .upload-link {
+            display: block;
+            color: #007bff;
+            font-size: 16px;
+            margin-top: 110px;
+            margin-bottom: 50px;
+            text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .upload-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+ </head>
+ <body>
+     <!-- Navbar -->
+     <nav class="navbar">
+ 
+        <!-- โลโก้ -->
+        <div class="logo">
+            <span style="font: size 100px;"><i class="fa-solid fa-print"></i>&nbsp;&nbsp;Easyprint</span>
+   
+            <div class="shop-name">            
+                <span> ร้าน ซี.พี.ร็อกซ์ 4</span>      
+            </div>
+        </div>
+   
+        <!-- ไอคอนแจ้งเตือน & ตั้งค่า -->
+        <div class="icons">
+            <ul>
+            <li><a href="#"><i class="fa fa-bell"></i></a></li>
+            <li><a href="#"><i class="fa fa-cog"></i></a></li>
+            </ul>
+        </div>
+   
+        </nav>
+   
+        <!-- เมนูด้านข้าง -->
+        <div class="sidebar">
+            <a href="main_partner.html" class="active"><i class="fa fa-home"></i> หน้าแรก</a>
+            <a href="set_service_partners.html"> กำหนดค่าบริการ</a>
+            <a href="set_pay_partners.html"> ชำระเงินออนไลน์</a>
+            <a href="promotion-partners.html"> โปรโมชั่น</a>
+            <a href="delivery_partners.html"> บริการจัดส่ง</a>
+            <a href="statistics_day_partners.html"> รายการคำสั่งซื้อ</a>
+            <a href="statistic_partners.html"> สถิติการขาย</a>
+            <a href="Edit_profile_partners.html"> แก้ไขโปรไฟล์</a>
+        </div>
+
+        <!-- เนื้อหา -->
+        <div class="form-container">
+
+            <!-- รูปโปรไฟล์ -->
+        <div class="profile-container">
+            <div class="profile-icon">
+                <i class="fa fa-user"></i> <!-- ไอคอนโปรไฟล์ -->
+            </div>
+            <!-- ไอคอนแก้ไข -->
+            <label for="uploadImage" class="edit-icon">
+                <i class="fa fa-camera"></i>
+            </label>
+            <input type="file" id="uploadImage" accept="image/*">
+        </div>
+
+        <!-- ลิงก์อัปโหลดรูป -->
+        <label for="uploadImage" class="upload-link">อัปโหลดโปรไฟล์</label>
+
+            <form>
+                <div class="form-group">
+                    <label for="store-name">ชื่อร้าน</label>
+                    <input type="text" id="store-name" placeholder="กรอกชื่อร้าน">
+                </div>
+                <div class="form-group">
+                    <label for="description">คำอธิบายร้านค้า</label>
+                    <textarea id="description" placeholder="กรอกคำอธิบายร้านค้า"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="location">ที่ตั้ง</label>
+                    <input type="text" id="location" placeholder="กรอกที่ตั้งร้าน">
+                </div>
+                <div class="form-group">
+                    <label for="hours">เวลาทำการ</label>
+                    <input type="text" id="hours" placeholder="กรอกเวลาทำการ">
+                </div>
+                <div class="form-group">
+                    <label for="contact">ช่องทางติดต่อ / เว็บไซต์</label>
+                    <input type="text" id="contact" placeholder="กรอกช่องทางติดต่อ">
+                </div>
+                <div class="form-group">
+                    <label for="reviews">หมายเหตุ</label>
+                    <textarea id="reviews" placeholder="หมายเหตุ"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">บันทึก</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            // อัปโหลดและแสดงรูปโปรไฟล์
+            document.getElementById('uploadImage').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.querySelector('.profile-icon').style.backgroundImage = `url(${e.target.result})`;
+                        document.querySelector('.profile-icon').style.backgroundSize = "cover";
+                        document.querySelector('.profile-icon').style.backgroundPosition = "center";
+                        document.querySelector('.profile-icon i').style.display = "none"; // ซ่อนไอคอน user
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
+ </body>
+ </html>

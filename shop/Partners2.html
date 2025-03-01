@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าร่วมเป็นพาร์ทเนอร์ EasyPrint</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+    <style>
+* {
+            padding: 0;  
+            }
+ 
+        body {
+            background: linear-gradient(0deg, #2196F3, #64b5f6, #90CAF9, #BBDEFB, #E3F2FD);
+            font-family: 'Sarabun', sans-serif;
+            color: #24091b;
+            height: 100vh;
+            margin: 0;
+            background-attachment: fixed;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            background: white;
+            padding: 10px 30px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 35px;
+            font-weight: bold;
+            display: flex;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+        }
+ 
+        .icons ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .icons ul li a {
+            text-decoration: none;
+            font-size: 25px;
+            color: black;
+        }
+
+         /* กรอบพื้นหลังเนื้อหา */
+         .container {
+            max-width: 800px;
+            margin: 10px auto;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+
+        }
+
+         /* แทบบอกสถานะ ส่วนเนื้อหา */
+         .container h2 {
+            text-align: center;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 700px;
+            margin: 50px auto;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .progress-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: -1;
+        }
+
+        .progress-circle {
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            z-index: 1;
+        }
+
+        .progress-text {
+            margin-top: 8px;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        .progress-step.active .progress-circle {
+            background-color: #ff5722; /* สีส้ม */
+        }
+
+        .progress-step.active .progress-text {
+            color: black;
+            font-weight: bold;
+        }
+
+        .progress-step.active + .progress-step::after {
+        background-color: #ff5722 !important;
+        }
+
+
+        /* ส่วนเนื้อหา กำหนดย่อหน้า */        
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            margin-bottom: 8px;
+        }
+
+        .form-group small {
+            color: darkred;
+        }
+               
+        .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* ต่างกันตรงนี้ */
+        .phone-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .phone-input select {
+            flex: 0 0 80px;
+        }
+
+        .phone-input input {
+            flex: 1;
+        }
+
+        /*  */
+
+        .btn-submit {
+            background-color: #4285F4;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #357ae8;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 🔹 Navbar -->
+    <nav class="navbar">
+        <!-- 🔹 โลโก้ -->
+        <div class="logo">
+            <span style="font: size 100px;"><i class="fa-solid fa-print"></i>&nbsp;&nbsp;Easyprint</span>
+        </div>
+ 
+        <!-- 🔹 ไอคอนตะกร้า & Login -->
+        <div class="icons">
+            <ul>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="#"><i class="fa-regular fa-circle-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ส่วนแทบบอกสถานะ  -->
+    <div class="container">
+        <h2>เข้าร่วมเป็นพาร์ทเนอร์ EasyPrint</h2>
+        <div class="progress-container">
+        <div class="progress-step active">
+            <div class="progress-circle">1</div>
+            <div class="progress-text">ข้อมูลพาร์ทเนอร์</div>
+        </div>
+        <div class="progress-step active">
+            <div class="progress-circle">2</div>
+            <div class="progress-text">สร้างบัญชีผู้ประกอบการ</div>
+        </div>
+        <div class="progress-step">
+            <div class="progress-circle">3</div>
+            <div class="progress-text">ข้อมูลร้านค้า</div>
+        </div>
+        <div class="progress-step">
+            <div class="progress-circle">4</div>
+            <div class="progress-text">ยืนยันตัวตน</div>
+        </div>
+    </div>
+
+    <hr> <br>
+    
+    <!-- ส่วนเนื้อหา  -->
+    <div class="container">
+    
+        <main>
+
+            <form>
+                <div class="form-group">
+                    <label>คำนำหน้า</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="title" value="นาย" required> นาย</label><br>
+                        <label><input type="radio" name="title" value="นาง" required> นาง</label><br>
+                        <label><input type="radio" name="title" value="นางสาว" required> นางสาว</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ชื่อ - นามสกุล (โดยไม่ต้องใส่คำนำหน้า)</label>
+                    <input type="text" placeholder="กรุณากรอกชื่อ - นามสกุล" required>
+                </div>
+
+                <div class="form-group">
+                    <label>อีเมล</label>
+                    <input type="email" placeholder="กรุณากรอกอีเมล" required>
+                </div>
+
+                <div class="form-group">
+                    <label>รหัสผ่าน</label>
+                    <input type="password" placeholder="กรุณากรอกรหัสผ่าน" required>
+                    <small>ประกอบไปด้วยตัวอักษรภาษาอังกฤษพิมพ์ใหญ่ พิมพ์เล็ก ตัวเลข</small>
+                </div>
+
+                <div class="form-group">
+                    <label>ยืนยันรหัสผ่าน</label>
+                    <input type="password" placeholder="กรุณายืนยันรหัสผ่าน" required>
+                </div>
+
+                <div class="form-group">
+                    <label>เบอร์โทรศัพท์</label>
+                    <div class="phone-input">
+                        <select>
+                            <option value="+66">+66</option>
+                        </select>
+                        <input type="text" placeholder="กรุณากรอกเบอร์โทรศัพท์" required>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn-submit" onclick="window.location.href='Partners3.html';">ต่อไป</button>
+            </form>
+        </main>
+    </div>
+    </div>
+</body>
+</html>

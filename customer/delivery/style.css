@@ -1,0 +1,255 @@
+* {
+    padding: 0;  
+}
+
+body {
+    background: linear-gradient(0deg, #2196F3, #64b5f6, #90CAF9, #BBDEFB, #E3F2FD);
+    font-family: 'Sarabun', sans-serif;
+    color: #24091b;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background: white;
+    padding: 10px 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+    display: flex;
+}
+
+.location-box {
+    background: #90CAF9;
+    border: 2px solid #000000;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-right: 80px;
+}
+
+.search-box {
+    display: flex;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: translateX(-50%);
+}
+
+.search-box input {
+    border: none;
+    padding: 8px;
+    width: 400px;
+    outline: none;
+   
+}
+
+.search-box button {
+    background: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background: white;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.menu a:hover {
+    color: blue;
+    border-bottom: 2px solid blue;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.icons ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.icons ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+.delivery-box select {
+    width: 200px; /* ปรับความกว้าง */
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.outer-box {
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(17, 1, 1, 0.15);
+    width: 1200px;
+    max-width: 1200px;
+    margin: auto;
+    border: 2px solid white;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-bar button {
+    border: 2px solid black;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.filter-bar .active {
+    background: #BBDEFB;
+}
+
+/* แยกกล่องร้านค้าออกจากกัน */
+.shop-box1 {
+    display: flex;
+    align-items: center;
+    background: #E3F2FD;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 8px; /* ช่องว่างระหว่างร้าน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* เงาเด่นขึ้น */
+    border: 2px solid white; /* กรอบขาวเด่นขึ้น */
+    max-width: 1200px;
+    
+}
+.shop-box2 {
+    display: flex;
+    align-items: center;
+    background: #E3F2FD;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 8px; /* ช่องว่างระหว่างร้าน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* เงาเด่นขึ้น */
+    border: 2px solid white; /* กรอบขาวเด่นขึ้น */
+    max-width: 1200px;
+    
+}
+.shop-box3 {
+    display: flex;
+    align-items: center;
+    background: #E3F2FD;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 8px; /* ช่องว่างระหว่างร้าน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* เงาเด่นขึ้น */
+    border: 2px solid white; /* กรอบขาวเด่นขึ้น */
+    max-width: 1200px;
+    
+}
+.shop-box4 {
+    display: flex;
+    align-items: center;
+    background: #E3F2FD;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 8px; /* ช่องว่างระหว่างร้าน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* เงาเด่นขึ้น */
+    border: 2px solid white; /* กรอบขาวเด่นขึ้น */
+    max-width: 1200px;
+    
+}
+.shop-box5 {
+    display: flex;
+    align-items: center;
+    background: #E3F2FD;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 8px; /* ช่องว่างระหว่างร้าน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* เงาเด่นขึ้น */
+    border: 2px solid white; /* กรอบขาวเด่นขึ้น */
+    max-width: 1200px;
+    
+}
+
+.image-box {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ปรับรูปให้พอดีกับกล่องโดยไม่บิดเบี้ยว */
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+
+.shop-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 2px;
+}
+
+.shop-distance {
+    font-size: 14px;
+    color: #555;
+    font-size: 12px;
+            margin-bottom: 2px;
+}
+
+.delivery {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 20px 0;
+}
+
+.info-box p {
+    display: inline-block;
+    margin-right: 10px; /* ระยะห่างระหว่างข้อความ */
+    
+}
+
+a {
+    text-decoration: none;
+}
