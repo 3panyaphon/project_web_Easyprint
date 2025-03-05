@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(0deg, #2196F3, #64b5f6, #90CAF9, #BBDEFB, #E3F2FD);
+    font-family: 'Sarabun', sans-serif;
+    color: #24091b;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 8px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button-container {
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.save-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+.save-btn:hover {
+    background-color: #45a049;
+}
+.cancel-btn:hover {
+    background-color: #d32f2f;
+}
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.column {
+    flex: 1;
+}
+
+.customer {
+    text-align: center;
+    border: 2px solid black;
+    margin: 20px auto;
+    width: 100px;
+    border-radius: 15px;
+}
+
+.forshop {
+    text-align: center;
+    border: 2px solid black;
+    margin: 20px auto;
+    width: 150px;
+    border-radius: 15px;
+    background-color: #BBDEFB;
+    transition: all 0.3s ease;
+}
+
+.forshop:hover {
+    background-color: #81D4FA;
+    transform: scale(1.05);
+}
+
+.forshop:active {
+    background-color: #4FC3F7;
+    transform: scale(0.95);
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: none;
+}

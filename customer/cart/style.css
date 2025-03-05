@@ -102,42 +102,48 @@ body {
     max-width: 700px;
     margin: 10px auto;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: aliceblue;
 }
 
-h2{
+h2 , h4{
     margin-bottom: 20px;
     text-align: center;
 }
 
-h4{
-    margin-bottom: 20px;
-    text-align: center;
-}
 
+h5{
+    margin-bottom: 20px;
+    padding-left: 100px;
+}
 
 .input-box {
-    width: 70%;
+    width: 50%;
     padding: 10px;
     margin: 5px auto;
-    border: 1px solid #ccc;
+   background-color: white;
     border-radius: 5px;
     text-align: center;
     display: block; 
+    border: none;
 }
 
 .total-box {
-    display: inline-block;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
+    display: flex;
+    padding: 2px 10px;
+    justify-content: center; 
+    align-items: center;
     border-radius: 9px;
-    background-color: #f9f9f9;
+    background-color: #b4cafb;
     min-width: 50px;
     text-align: center;
+    margin: 0 auto;
 }
 
+.order-list {
+    color: #ddd;
+    border: 1px #ddd;
+    pointer-events: none;
+}
 
 .payment-box {
     width: 250px;
@@ -152,15 +158,27 @@ h4{
     font-size: 14px;
 }
 
+.delivery-service{
+    width: 250px;
+    border-collapse: collapse ;
+    margin: 0 auto;
+}
+
+.delivery-service td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
 .qr-section {
     text-align: center;
-    margin-top: 15px;
 }
 
 .button-box {
     display: flex;
     justify-content: center;
-    margin: 20px 40px;
+    margin: 0px 40px;
 }
 
 button {
@@ -213,4 +231,171 @@ button {
 
 .cart-icon i {
     font-size: 18px;
+}
+
+.shipping-container {
+    background-color: #fff;
+    width: 400px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.shipping-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.shipping-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.shipping-title {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.change-option {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.shipping-address {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.address-icon img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.address-details {
+    flex-grow: 1;
+}
+
+.address-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.address-subtitle {
+    font-size: 13px;
+    color: #666;
+}
+
+.edit-address {
+    font-size: 18px;
+    color: #666;
+    text-decoration: none;
+}
+
+.shipping-note {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}
+
+.address-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.address-item {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.address-item.selected {
+    border: 2px solid red;
+    background-color: #ffebe6;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.address-info {
+    flex-grow: 1;
+}
+
+.address-info h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.address-info .phone {
+    font-size: 14px;
+    color: #555;
+}
+
+.address-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+   
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.add-address {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    
+    background-color: white;
+
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-address:hover {
+    background-color: #ff5722;
+    color: white;
+}
+
+.box-edit-address{
+    background-color:#f3e6d8;
+    margin: 30px auto;
+    padding: 20px ;
+    border-radius: 20px;
 }

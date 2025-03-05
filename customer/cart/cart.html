@@ -5,36 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart | Easyprint</title>
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
         crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-
-    <!-- 🔹 Navbar -->
     <nav class="navbar">
-        <!-- 🔹 โลโก้ -->
         <div class="logo">
-            <span style="font: size 100px;"><i class="fa-solid fa-print"></i>&nbsp;&nbsp;Easyprint</span>
+            <span><i class="fa-solid fa-print"></i>&nbsp;Easyprint</span>
         </div>
-
-        <!-- 🔹 ตำแหน่งปัจจุบัน -->
         <div class="location-box">
-
-            <span><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ตำแหน่งปัจจุบัน</span>
-
+            <span><i class="fa-solid fa-location-dot"></i>&nbsp;ตำแหน่งปัจจุบัน</span>
         </div>
-
-        <!-- 🔹 ช่องค้นหา -->
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="ค้นหาร้านถ่ายเอกสาร">
             <button><i class="fas fa-search"></i></button>
         </div>
-
-        <!-- 🔹 ไอคอนตะกร้า & Login -->
         <div class="icons">
             <ul>
                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -43,50 +32,107 @@
         </div>
     </nav>
 
-    <!-- 🔹 เมนูด้านล่าง -->
     <div class="menu">
         <a href="../main/main.html">หน้าหลัก</a>
         <a href="../howtoprint/howtoprint.html">วิธีสั่งพิมพ์เอกสาร</a>
         <a href="../order/order1.html">ติดตามสถานะงาน</a>
         <a href="../question/question.html">คำถามที่พบบ่อย</a>
     </div>
+
     <div class="container">
-        <h2><span class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></span> รายการคำสั่งซื้อทั้งหมด</h2>
-
-        <hr class="divider"><br>
-        <input type="text" class="input-box" value="ไฟล์1. A3" readonly>
-        <input type="text" class="input-box" value="งานวิจัย. A4" readonly>
-        <input type="text" class="input-box" value="สรุปแคลคูลัส. A4" readonly>
-
-        <h4>รวมยอดทั้งหมด : <span class="total-box">127</span> บาท</h4>
+        <h2><i class="fa-solid fa-cart-shopping"></i> รายการคำสั่งซื้อทั้งหมด</h2>
         <hr class="divider">
-        <h4 class="section-title">วิธีชำระเงิน</h4>
+        <div class="order-list">
+            <input type="text" class="input-box" value="ไฟล์1. A3" readonly>
+            <input type="text" class="input-box" value="งานวิจัย. A4" readonly>
+            <input type="text" class="input-box" value="สรุปแคลคูลัส. A4" readonly>
+        </div>
+        <br>
+        <span class="total-box">
+            <h4>รวมยอดทั้งหมด: 127 บาท</h4>
+        </span>
 
-        <!-- ตารางเลือกวิธีชำระเงิน -->
-        <table class="payment-box">
-            <tr>
-                <td><label><input type="radio" name="payment" value="store" onclick="toggleQR(false)">
-                        ชำระที่ร้าน</label></td>
-            </tr>
-            <tr>
-                <td><label><input type="radio" name="payment" value="qr" onclick="toggleQR(true)"> QR Code</label></td>
-            </tr>
-        </table>
+        <h5 class="section-title">ชำระเงิน : <p>PromptPay: XXX-XXX-1234</p>
+        </h5>
+        <div class="qr-section" id="qrSection">
 
-        <!-- QR Code + อัปโหลดหลักฐาน -->
-        <div class="qr-section" id="qrSection" style="display: none;">
+            <input type="file" accept=".png, .jpg, .jpeg" class="input-box">
             <img src="https://www.scb.co.th/getmedia/2f609c0d-4ec2-4682-a194-137f66371bad/qr-code-generated-7.jpg"
                 alt="QR Code" width="200">
-            <p>PromptPay: XXX-XXX-1234</p>
-            <input type="file" accept=".png, .jpg, .jpeg" class="input-box">
+
+            </d>
+            <br>
+            <hr class="divider">
+
+            <h4 class="section-title">วิธีการจัดส่ง</h4>
+            <table class="delivery-service">
+                <tr>
+                    <td>
+                        <label>
+                            <input type="radio" name="delivery" value="pickup" id="pickup"> รับเองที่ร้าน
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="radio" name="delivery" value="delivery" id="delivery"> จัดส่งถึงที่
+                        </label>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+
+            <div class="shipping-container" id="shipping-container" style="display: none;">
+                <div class="shipping-header">
+                    <div class="shipping-icon">
+                        <h4> <i class="fa-solid fa-map-location-dot"></i> &nbsp; &nbsp; &nbsp;หอนำโชค&nbsp; &nbsp;
+                            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                            &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                            &nbsp;<a href="#" class="edit-address">></a></h4>
+                    </div>
+                </div>
+
+                <div class="address-details">
+                    <p class="address-title">บ้านเลขที่ 796 หมู่ 16 ตำบลแม่กา</p>
+                    <p class="address-subtitle">796 , Mae ka, Mueang Phayao, Phayao, 56000, Thailand</p>
+                </div>
+            </div>
+
+            <div class="box-edit-address"   style="display: none;">
+            <div class="address-container">
+                <div class="address-item selected">
+                    <input type="radio" name="address" checked>
+                    <div class="address-info">
+                        <h4>ปัญญาพร <span class="phone">(+66) 93 465 0052</span></h4>
+                        <p>หอพักนำโชคหน้า ม.พะเยา, บ้านเลขที่ 796 หมู่ที่ 16, ตำบลแม่กา, อำเภอเมืองพะเยา, จังหวัดพะเยา, 56000</p>
+                        <button class="edit-button">แก้ไข</button>
+                    </div>
+                </div>
+            
+                <div class="address-item">
+                    <input type="radio" name="address">
+                    <div class="address-info">
+                        <h4>202 ปัญญาพร พลชา <span class="phone">(+66) 93 465 0052</span></h4>
+                        <p>หอพักอินฟินิตี้, เลขที่ 495/10, หมู่ที่ 16, ตำบลแม่กา, อำเภอเมืองพะเยา, จังหวัดพะเยา, 56000</p>
+                        <button class="edit-button">แก้ไข</button>
+                    </div>
+                </div>
+            
+            
+<a href="../AddAddress/address.html"><button class="add-address">+ เพิ่มที่อยู่ใหม่</button></a>
+            </div>
+            
+        </div>
         </div>
 
+        <br><br>
         <div class="button-box">
             <a href="../main/main.html"><button class="btn-back">ย้อนกลับ</button></a>
-            <button class="btn-confirm">ยืนยัน</button>
+            <a href="../order/order1.html"><button class="btn-confirm">ยืนยัน</button></a>
         </div>
     </div>
-    </div>
-    <script src="script.js"></script>
 </body>
+
 </html>

@@ -19,11 +19,10 @@
             <span style="font: size 100px;"><i class="fa-solid fa-print"></i>&nbsp;&nbsp;Easyprint</span>
         </div>
 
-        <div class="location-box">
-
+        <div class="location-box" id="currentLocation">
             <span><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ตำแหน่งปัจจุบัน</span>
-
         </div>
+
 
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="ค้นหาร้านถ่ายเอกสาร">
@@ -44,40 +43,7 @@
         <a href="../order/order1.html">ติดตามสถานะงาน</a>
         <a href="../question/question.html">คำถามที่พบบ่อย</a>
     </div>
-
-    <br><br><br><br>
-
-    <div class="box-img">
-        <img src="https://png.pngtree.com/thumb_back/fh260/background/20201009/pngtree-beautiful-sunrise-and-blue-sky-wallpaper-image_404266.jpg"
-            alt="รูปโฆษณา">
-    </div>
-
-    <div class="button-container">
-        <div class="button-box">
-            <i class="fa-solid fa-store"></i>
-            <a href="../shop/shop.html">
-                <p>ร้านใกล้ฉัน </p>
-            </a>
-        </div>
-        <div class="button-box">
-            <i class="fa-solid fa-clock"></i>
-            <a href="../order/order1.html">
-                <p>สถานะงาน</p>
-            </a>
-        </div>
-        <div class="button-box">
-            <i class="fa-solid fa-truck"></i>
-            <a href="../delivery/shopdelivery.html">
-                <p>จัดส่งถึงที่</p>
-            </a>
-        </div>
-        <div class="button-box">
-            <i class="fa-solid fa-book"></i>
-            <a href="../onlyเข้าเล่ม/เข้าเล่ม.html">
-                <p>เข้าเล่ม</p>
-            </a>
-        </div>
-    </div>
+    <br><br>
 
     <div class="outer-box">
         <div class="filter-bar">
@@ -91,62 +57,105 @@
             </div>
         </div>
 
-        <a href="../page/Order_Page1.html"><div class="shop-box1" data-type="pickup delivery">
-            <div class="image-box"><img src="Image.jpg"></div>
-            
+        <a href="../page/Order_Page1.html">
+            <div class="shop-box1" data-type="pickup delivery">
+                <div class="image-box"><img src="Image.jpg"></div>
+
                 <div class="info-box">
                     <p class="shop-name">พีซีร็อกซ์ 4</p>
                     <p class="shop-distance"><i class="fa-solid fa-location-dot"></i> 1.1 KM</p>
                     <p class="delivery">รับเองที่ร้าน</p>
                     <p class="delivery">จัดส่งถึงที่</p>
                 </div>
-        </div></a>
+            </div>
+        </a>
 
-        <a href="../page/Order_Page2.html"><div class="shop-box2" data-type="pickup">
-            <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSGjDZZBM4KcTwoCbsfxvPTGOl47qxUQktwg&s"></div>
-            
+        <a href="../page/Order_Page2.html">
+            <div class="shop-box2" data-type="pickup">
+                <div class="image-box"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSGjDZZBM4KcTwoCbsfxvPTGOl47qxUQktwg&s">
+                </div>
+
                 <div class="info-box">
                     <p class="shop-name">COPY HOUSE and PRINTING</p>
                     <p class="shop-distance"><i class="fa-solid fa-location-dot"></i> 2.5 KM</p>
                     <p class="delivery">รับเองที่ร้าน</p>
                 </div>
-        </div></a>
-
-        <a href="../page/Order_Page3.html"><div class="shop-box3" data-type="pickup">
-            <div class="image-box"><img
-                    src="https://lh3.googleusercontent.com/p/AF1QipMoCZ1cHDdyCHCD2MHbBgcNEz4LhDIY_9CHqaqe=s3072-w3072-h1390-rw">
             </div>
-            <div class="info-box">
-                <p class="shop-name">ร้านถ่ายเอกสาร เวียงพะเยา</p>
-                <p class="shop-distance"><i class="fa-solid fa-location-dot"></i> 3.2 KM</p>
-                <p class="delivery">รับเองที่ร้าน</p>
-            </div>
-        </div></a>
+        </a>
 
-        <a href="../page/Order_Page4.html"><div class="shop-box4" data-type="pickup">
-            <div class="image-box"><img
-                    src="https://lh3.googleusercontent.com/p/AF1QipNLKYW02-H7RUYDKZIqzOA80ZcZCdxzrz--ZWln=s3072-w3072-h1390-rw">
-            </div> 
-            <div class="info-box">
-                <p class="shop-name">ร้านเจริญทอง</p>
-                <p class="shop-distance"><i class="fa-solid fa-location-dot"></i> 3.2 KM</p>
-                <p class="delivery">รับเองที่ร้าน</p>
+        <a href="../page/Order_Page3.html">
+            <div class="shop-box3" data-type="pickup">
+                <div class="image-box"><img
+                        src="https://lh3.googleusercontent.com/p/AF1QipMoCZ1cHDdyCHCD2MHbBgcNEz4LhDIY_9CHqaqe=s3072-w3072-h1390-rw">
+                </div>
+                <div class="info-box">
+                    <p class="shop-name">ร้านถ่ายเอกสาร เวียงพะเยา</p>
+                    <p class="shop-distance"><i class="fa-solid fa-location-dot"></i> 3.2 KM</p>
+                    <p class="delivery">รับเองที่ร้าน</p>
+                </div>
             </div>
-        </div></a>
+        </a>
 
-        <a href="../page/Order_Page5.html"><div class="shop-box5" data-type="delivery">
-            <div class="image-box"><img
+        <a href="../page/Order_Page4.html">
+            <div class="shop-box4" data-type="pickup">
+                <div class="image-box"><img
+                        src="https://lh3.googleusercontent.com/p/AF1QipNLKYW02-H7RUYDKZIqzOA80ZcZCdxzrz--ZWln=s3072-w3072-h1390-rw">
+                </div>
+                <div class="info-box">
+                    <p class="shop-name">ร้านเจริญทอง</p>
+                    <p class="shop-distance"><i class="fa-solid fa-location-dot"></i> 3.2 KM</p>
+                    <p class="delivery">รับเองที่ร้าน</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="../page/Order_Page5.html">
+            <div class="shop-box5" data-type="delivery">
+                <div class="image-box"><img
                     src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/474193630_122188325156086593_1630121166019807293_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=4TVUNbIwt4kQ7kNvgHpS8IS&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=AXf_q6Tbe-i-dbnkFBS3p_K&oh=00_AYDVXZvB61IABFAsE00VyWPQiGGd1An9zyR28kJaT9ybLw&oe=67C75C88">
+                </div>
+                <div class="info-box">
+                    <p class="shop-name">2Bears Service ร้านปริ้น - ถ่ายเอกสารพะเยา</p>
+                    <p class="shop-distance"><i class="fa-solid fa-location-dot"></i> 3.2 KM</p>
+                    <p class="delivery">จัดส่งถึงที่</p>
+                </div>
             </div>
-            <div class="info-box">
-                <p class="shop-name">2Bears Service ร้านปริ้น - ถ่ายเอกสารพะเยา</p>
-                <p class="shop-distance"><i class="fa-solid fa-location-dot"></i> 3.2 KM</p>
-                <p class="delivery">จัดส่งถึงที่</p>
-            </div>
-        </div></a>
+        </a>
 
     </div>
+    <div class="popup" id="addressPopup">
+        <div class="popup-content">
+            <h4>ตำแหน่งปัจจุบัน</h4>
+            <p>ที่อยู่ที่จะส่งปัจจุบัน</p>
+
+            <div class="address-container">
+                <div class="address-item selected">
+                    <input type="radio" name="address" checked>
+                    <div class="address-info" style="border: none;">
+                        <h4>ปัญญาพร <span class="phone">(+66) 93 465 0052</span></h4>
+                        <p>หอพักนำโชคหน้า ม.พะเยา, บ้านเลขที่ 796 หมู่ที่ 16, ตำบลแม่กา, อำเภอเมืองพะเยา, จังหวัดพะเยา,
+                            56000</p>
+                        <button class="edit-button">แก้ไข</button>
+                    </div>
+                </div>
+                <div class="address-item">
+                    <input type="radio" name="address">
+                    <div class="address-info" style="border: none;">
+                        <h4>202 ปัญญาพร พลชา <span class="phone">(+66) 93 465 0052</span></h4>
+                        <p>หอพักอินฟินิตี้, เลขที่ 495/10, หมู่ที่ 16, ตำบลแม่กา, อำเภอเมืองพะเยา, จังหวัดพะเยา, 56000
+                        </p>
+                        <button class="edit-button">แก้ไข</button>
+                    </div>
+                </div>
+                <button class="add-address">+ เพิ่มที่อยู่ใหม่</button>
+            </div>
+            <button class="close-button" onclick="closePopup()">ปิด</button>
+        </div>
+    </div>
+
+
+
     <script src="script.js"></script>
 </body>
-
 </html>
